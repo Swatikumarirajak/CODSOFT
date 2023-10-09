@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>landing page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">Wounder Season</a>
+        <div class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Explore</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contact</a>
+        </div>
+    </header>
+    <section class="home">
+        <video src="vid1.mp4" muted autoplay loop class="video-slider active"></video>
+        <video src="vid2.mp4" muted autoplay loop class="video-slider"></video>
+        <video src="vid3.mp4" muted autoplay loop class="video-slider"></video>
+        <video src="vid4.mp4" muted autoplay loop class="video-slider"></video>
+       
+       <div class="content active">
+            <h1>Spring, <br><span>Day</span></h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime nihil doloremque veritatis labore obcaecati, ipsa eaque at commodi impedit totam inventore quaerat ipsam nobis quo cupiditate reprehenderit rerum? Ullam quisquam, aliquam praesentium impedit deleniti rerum eos qui dicta deserunt optio!</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="content">
+            <h1>Winter, <br><span>Island</span></h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime nihil doloremque veritatis labore obcaecati, ipsa eaque at commodi impedit totam inventore quaerat ipsam nobis quo cupiditate reprehenderit rerum? Ullam quisquam, aliquam praesentium impedit deleniti rerum eos qui dicta deserunt optio!</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="content">
+            <h1>Autumn</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime nihil doloremque veritatis labore obcaecati, ipsa eaque at commodi impedit totam inventore quaerat ipsam nobis quo cupiditate reprehenderit rerum? Ullam quisquam, aliquam praesentium impedit deleniti rerum eos qui dicta deserunt optio!</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="content">
+            <h1>Rainy, <br><span>Day</span></h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime nihil doloremque veritatis labore obcaecati, ipsa eaque at commodi impedit totam inventore quaerat ipsam nobis quo cupiditate reprehenderit rerum? Ullam quisquam, aliquam praesentium impedit deleniti rerum eos qui dicta deserunt optio!</p>
+            <a href="#">Read More</a>
+        </div>
+        
+<div class="slider-navigation">
+   <div class="nav-btn"></div>
+   <div class="nav-btn"></div>
+   <div class="nav-btn"></div>
+   <div class="nav-btn"></div>
+</div>
+    </section>
+
+
+
+    <script>
+        const btns=document.querySelectorAll('.nav-btn');
+        const slides = document.querySelectorAll(".video-slider");
+        const contentDivs  = document.querySelectorAll(".content");
+
+        var sliderNav = function(index){
+            btns.forEach((btn)=>{
+                  btn.classList.remove('active');
+            });
+
+            slides.forEach((slide)=>{
+                  slide.classList.remove('active');
+            });
+
+            contentDivs.forEach((content)=>{
+                  content.classList.remove('active');
+            });
+
+            btns[index].classList.add('active');
+            slides[index].classList.add('active');
+            contentDivs[index].classList.add('active');
+        }
+        btns.forEach((btn,i)=>{
+            btn.addEventListener("click",()=>{
+                sliderNav(i);
+        })
+    })
+    </script>
+</body>
+</html>
